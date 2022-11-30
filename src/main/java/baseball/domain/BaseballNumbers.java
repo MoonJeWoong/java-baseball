@@ -29,7 +29,7 @@ public class BaseballNumbers {
     }
 
     public boolean isValueAt(int number, int index){
-        return numbers.indexOf(index) == number;
+        return numbers.get(index) == number;
     }
 
     public int valueAt(int index){
