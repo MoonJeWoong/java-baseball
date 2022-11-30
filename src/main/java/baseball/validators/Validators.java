@@ -9,4 +9,11 @@ public final class Validators {
             throw new IllegalArgumentException();
         }
     }
+
+    public static void validateNoDuplicatedList(List<Integer> list) throws IllegalArgumentException{
+        HashSet<Integer> validationNumbers = new HashSet<>(list);
+        if(validationNumbers.size() != list.size()){
+            throw new IllegalArgumentException();
+        }
+    }
 }
