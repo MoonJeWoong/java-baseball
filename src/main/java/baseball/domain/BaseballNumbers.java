@@ -31,4 +31,8 @@ public class BaseballNumbers {
     public boolean isValueAt(int number, int index){
         return numbers.indexOf(index) == number;
     }
+
+    public int valueAt(int index){
+        return numbers.get(index);
+    }
 }
