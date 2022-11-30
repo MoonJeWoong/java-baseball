@@ -4,7 +4,6 @@ public enum BaseballResults {
 
     THREE_STRIKES(3,0),
     TWO_STRIKES(2,0),
-    TWO_STRIKES_ONE_BALL(2,1),
     ONE_STRIKES(1,0),
     ONE_STRIKES_ONE_BALL(1,1),
     ONE_STRIKES_TWO_BALLS(1,2),

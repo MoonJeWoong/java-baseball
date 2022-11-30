@@ -23,7 +23,6 @@ class BaseballResultsTest {
         return Stream.of(
                 Arguments.of(3,0,BaseballResults.THREE_STRIKES),
                 Arguments.of(2,0,BaseballResults.TWO_STRIKES),
-                Arguments.of(2,1,BaseballResults.TWO_STRIKES_ONE_BALL),
                 Arguments.of(1,0,BaseballResults.ONE_STRIKES),
                 Arguments.of(1,1,BaseballResults.ONE_STRIKES_ONE_BALL),
                 Arguments.of(1,2,BaseballResults.ONE_STRIKES_TWO_BALLS),
