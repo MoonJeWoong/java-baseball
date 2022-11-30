@@ -27,4 +27,8 @@ public class BaseballNumbers {
     public boolean contains(int number){
         return numbers.contains(number);
     }
+
+    public boolean isValueAt(int number, int index){
+        return numbers.indexOf(index) == number;
+    }
 }
