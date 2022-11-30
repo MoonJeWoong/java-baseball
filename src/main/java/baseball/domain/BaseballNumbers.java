@@ -23,4 +23,8 @@ public class BaseballNumbers {
         Validators.validateNoDuplicatedList(numbers);
         Validators.validateNaturalNumberList(numbers);
     }
+
+    public boolean contains(int number){
+        return numbers.contains(number);
+    }
 }
