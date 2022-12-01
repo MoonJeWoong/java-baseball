@@ -30,6 +30,7 @@ public class Controller {
     private void playGame(){
         BaseballResults result = service.getBaseballResults(getPlayerNumbers());
         outputView.printGameResult(result);
+        isGameEnded(result);
     }
 
     private BaseballNumbers getPlayerNumbers(){
@@ -40,5 +41,13 @@ public class Controller {
             System.out.println("[ERROR] 숫자의 길이, 중복 여부, 자연수 여부를 확인 후 재입력 해 주십시오.");   //outputView 로 분리하기
             return getPlayerNumbers();
         }
+    }
+
+    private void isGameEnded(BaseballResults result){
+        if(!result.equals(BaseballResults.THREE_STRIKES)){
+            playGame();
+            return;
+        }
+        outputView.printGameFinished();
     }
 }
