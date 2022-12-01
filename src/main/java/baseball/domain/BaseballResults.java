@@ -13,6 +13,8 @@ public enum BaseballResults {
     NOTHING(0,0);
 
 
+    private static final int COUNT_ZERO = 0;
+
     private final int strikes;
     private final int balls;
 
@@ -36,5 +38,35 @@ public enum BaseballResults {
             }
         }
         return NOTHING;
+    }
+
+    public String toString(){
+        if(isSameStrikes(COUNT_ZERO) && isSameBalls(COUNT_ZERO)){
+            return nothingToString();
+        }
+        return resultToString();
+    }
+
+    private String nothingToString(){
+        return "낫싱";
+    }
+
+    private String resultToString(){
+        StringBuilder result = new StringBuilder();
+        appendBallCount(result);
+        appendStrikeCount(result);
+        return result.toString().trim();
+    }
+
+    private void appendBallCount(StringBuilder result){
+        if(!isSameBalls(COUNT_ZERO)){
+            result.append(String.format("%d볼 ",balls));
+        }
+    }
+
+    private void appendStrikeCount(StringBuilder result){
+        if(!isSameStrikes(COUNT_ZERO)){
+            result.append(String.format("%d스트라이크", strikes));
+        }
     }
 }
