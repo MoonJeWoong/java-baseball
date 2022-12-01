@@ -1,6 +1,5 @@
 package baseball.utils;
 
-import baseball.utils.NumberListGenerator;
 import camp.nextstep.edu.missionutils.Randoms;
 
 import java.util.ArrayList;
@@ -12,7 +11,7 @@ public class RandomNumberListGenerator implements NumberListGenerator {
     private static final int END_RANGE = 9;
 
     @Override
-    public List<Integer> generate(int size){
+    public List<Integer> generate(int size) {
         List<Integer> numbers = new ArrayList<>();
         while (numbers.size() < size) {
             int randomNumber = Randoms.pickNumberInRange(START_RANGE, END_RANGE);
