@@ -1,6 +1,7 @@
 package baseball.controller;
 
 import baseball.domain.BaseballNumbers;
+import baseball.domain.BaseballResults;
 import baseball.service.Service;
 import baseball.utils.NumberListGenerator;
 import baseball.utils.Parser;
@@ -27,7 +28,8 @@ public class Controller {
     }
 
     private void playGame(){
-        getPlayerNumbers();
+        BaseballResults result = service.getBaseballResults(getPlayerNumbers());
+        outputView.printGameResult(result);
     }
 
     private BaseballNumbers getPlayerNumbers(){
