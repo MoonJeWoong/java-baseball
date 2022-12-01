@@ -23,6 +23,7 @@ public class Controller {
 
     private void initGame(){
         service.setComputerNumbers(numberListGenerator);
+        outputView.printGameStart();
     }
 
     private void playGame(){
