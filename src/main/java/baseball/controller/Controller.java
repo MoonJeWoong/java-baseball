@@ -18,14 +18,18 @@ public class Controller {
     private static final InputView inputView = new InputView();
     private static final OutputView outputView = new OutputView();
 
+    public Controller(){
+        outputView.printGameStart();
+    }
+
     public void run(){
         initGame();
         playGame();
+        retryGameOrQuit();
     }
 
     private void initGame(){
         service.setComputerNumbers(numberListGenerator);
-        outputView.printGameStart();
     }
 
     private void playGame(){
