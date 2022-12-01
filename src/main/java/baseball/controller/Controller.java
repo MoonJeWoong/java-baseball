@@ -2,6 +2,7 @@ package baseball.controller;
 
 import baseball.domain.BaseballNumbers;
 import baseball.domain.BaseballResults;
+import baseball.domain.RetryCommands;
 import baseball.service.Service;
 import baseball.utils.NumberListGenerator;
 import baseball.utils.Parser;
@@ -49,5 +50,23 @@ public class Controller {
             return;
         }
         outputView.printGameFinished();
+    }
+
+    private void retryGameOrQuit(){
+        RetryCommands retryCommands = getRetryCommands();
+        if(retryCommands.equals(RetryCommands.RETRY)){
+            run();
+            return;
+        }
+        outputView.printProgramQuit();
+    }
+
+    private RetryCommands getRetryCommands(){
+        try{
+            return RetryCommands.from(inputView.readRetryCommands());
+        } catch (IllegalArgumentException error) {
+            System.out.println("[ERROR] 1 혹은 2의 숫자만 입력이 가능합니다. 재입력 해 주십시오.");   //outputView 로 분리하기
+            return getRetryCommands();
+        }
     }
 }
